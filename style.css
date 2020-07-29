@@ -1,0 +1,35 @@
+
+body{
+    margin:0;
+    display:flex;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+main{
+    width:300px;
+    background-color: #f22625;
+    color:#fff;
+    border-radius: 1em;
+    text-align:center;
+    margin:0 auto;
+    padding:1em;
+}
+
+#pokemon::first-letter{
+    text-transform: uppercase;
+}
+.window{
+    background: #fff;
+}
+input {
+    padding:1em;
+    width:100%;
+    box-sizing: border-box;
+    border: none;
+    margin-top:1em;
+    outline: none;
+    border-radius: .5em 0 , 0, 0 rgba(0,0,0, .5);
+    box-shadow: inset;
+}

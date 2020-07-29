@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokedex</title>
+</head>
+<body>
+    <main>
+        <h1 id="pokemon">pikachu</h1>
+        <div class="window">
+            <img src="" alt="" id="image">
+        </div>
+        <input type="text" id="search">
+    </main>
+
+    <script>
+              
+        async function getPokemon(id){
+          const   res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`) ;
+          const  data = await res.json();
+          return data
+        }  
+
+        window.search.addEventListener('keypress', (e)=>{
+            if (e.key === 'Enter') {
+                let valor = window.search.value;
+                if(valor==="") return null
+               
+                getPokemon(window.search.value).then(res=>{
+                window.pokemon.textContent=res.name
+                window.image.setAttribute('src',res.sprites.front_default)
+                })
+             }
+        })
+        
+    </script>
+</body>
+</html>
